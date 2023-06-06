@@ -1,0 +1,6 @@
+"id","name","zero_validation"
+"account_reports.balance_sheet","Balance de situación","True"
+"account_reports.trial_balance_report","Balance general","True"
+"account_reports.cash_flow_report","Estado de flujos de efectivo","True"
+"account_reports.general_ledger_report","Libro mayor","True"
+"account_reports.profit_and_loss","Pérdidas y ganancias","True"

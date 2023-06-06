@@ -1,99 +1,86 @@
 # -*- coding: utf-8 -*-
-
-import operator
-import json
-import functools
-
+# Part of Odoo. See LICENSE file for full copyright and licensing details.
 import werkzeug
-import werkzeug.exceptions
-import werkzeug.utils
-import werkzeug.wrappers
-import werkzeug.wsgi
+from werkzeug.exceptions import InternalServerError
 
-from odoo import http, tools
-from odoo.http import (
-    request,
-    content_disposition,
-    serialize_exception as _serialize_exception
-)
-from odoo.tools import pycompat, float_repr
+from odoo import http
+from odoo.models import check_method_name
+from odoo.http import content_disposition, request
+from odoo.tools.misc import html_escape
 
-from odoo.addons.web.controllers.main import (
-        ExportFormat,
-        GroupsTreeNode,
-        ExcelExport,
-        GroupExportXlsxWriter,
-        ExportXlsxWriter,
+import json
+
+
+class AccountReportController(http.Controller):
+
+    @http.route(
+        '/account_reports', type='http',
+        auth='user', methods=['POST'],
+        csrf=False
     )
+    def get_report(self, options, file_generator, **kwargs):
+        uid = request.uid
+        options = json.loads(options)
 
+        allowed_company_ids = [
+            company_data['id'] for company_data in options.get(
+                'multi_company', [])
+        ]
+        if not allowed_company_ids:
+            company_str = request.httprequest.cookies.get(
+                'cids', str(request.env.user.company_id.id))
+            allowed_company_ids = [
+                int(str_id) for str_id in company_str.split(',')]
 
-def serialize_exception(f):
-    @functools.wraps(f)
-    def wrap(*args, **kwargs):
+        report = request.env['account.report'].with_user(uid).with_context(
+            allowed_company_ids=allowed_company_ids
+        ).browse(options['report_id'])
+
         try:
-            return f(*args, **kwargs)
+            check_method_name(file_generator)
+            generated_file_data = report.dispatch_report_action(
+                options, file_generator)
+            file_content = generated_file_data['file_content']
+            file_type = generated_file_data['file_type']
+            response_headers = self._get_response_headers(
+                file_type, generated_file_data['file_name'], file_content)
+
+            if file_type == 'xlsx':
+                response = request.make_response(
+                    None, headers=response_headers)
+                response.stream.write(
+                    file_content)
+            else:
+                response = request.make_response(
+                    file_content, headers=response_headers)
+
+            if file_type == 'zip':
+                # Adding direct_passthrough to the
+                # response and giving it a file
+                # as content means that we will
+                # stream the content of the file to the user
+                # Which will prevent having the whole file in memory
+                response.direct_passthrough = True
+
+            return response
         except Exception as e:
-            se = _serialize_exception(e)
+            se = http.serialize_exception(e)
             error = {
                 'code': 200,
-                'message': "Odoo Server Error",
+                'message': 'Odoo Server Error',
                 'data': se
             }
-            return werkzeug.exceptions.InternalServerError(json.dumps(error))
-    return wrap
+            res = request.make_response(html_escape(json.dumps(error)))
+            raise InternalServerError(response=res) from e
 
+    def _get_response_headers(self, file_type, file_name, file_content):
+        headers = [
+            ('Content-Type', request.env[
+                'account.report'].get_export_mime_type(file_type)),
+            ('Content-Disposition', content_disposition(file_name)),
+        ]
 
-class ExcelExportI(ExcelExport, ExportFormat):
+        if file_type in ('xml', 'xaf', 'txt', 'csv', 'kvr', 'csv'):
+            headers.append(('Content-Length', len(file_content)))
 
-    @http.route('/web/export/xlsx', type='http', auth="user")
-    @serialize_exception
-    def index(self, data, token):
-        return self.base(data, token)
-
-    def from_group_data(self, fields, groups):
-        with ExtendGroupExportXlsxWriter(fields, groups.count) as xlsx_writer:
-            x, y = 1, 0
-
-            for group_name, group in groups.children.items():
-                x, y = xlsx_writer.write_group(x, y, group_name, group)
-        return xlsx_writer.value
-
-
-class ExtendGroupExportXlsxWriter(GroupExportXlsxWriter, ExportXlsxWriter):
-
-    def _write_group_header(self, row, column, label, group, group_depth=0):
-        aggregates = group.aggregated_values
-        label = '%s%s (%s)' % ('    ' * group_depth, label, group.count)
-        self.write(row, column, label, self.header_bold_style)
-
-        if any(f.get('type') == 'monetary' for f in self.fields[1:]):
-            decimal_places = [
-                res['decimal_places'] for res in group._model
-                .env['res.currency'].search_read(
-                    [], ['decimal_places']
-                )
-            ]
-            decimal_places = max(decimal_places) if decimal_places else 2
-
-        for field in self.fields[1:]:
-            column += 1
-            aggregated_value = aggregates.get(field['name'])
-
-            if isinstance(aggregated_value, float):
-                if field.get('type') == 'monetary':
-                    aggregated_value = float_repr(
-                        aggregated_value,
-                        decimal_places
-                    )
-                    aggregated_value = aggregated_value.replace('.', ",")
-
-                elif not field.get('store'):
-                    aggregated_value = float_repr(aggregated_value, 2)
-
-            self.write(
-                row, column,
-                str(
-                    aggregated_value if aggregated_value is not None else ''
-                ), self.header_bold_style
-            )
-        return row + 1, 0
+        return headers

@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 13.0+e\n"
+"Project-Id-Version: Odoo Server 16.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-03 21:50+0000\n"
-"PO-Revision-Date: 2023-02-03 21:50+0000\n"
+"POT-Creation-Date: 2023-05-17 23:56+0000\n"
+"PO-Revision-Date: 2023-05-17 23:56+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,126 +16,95 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: account_report_adjustment
-#: code:addons/account_report_adjustment/models/account_assets_report.py:0
-#, python-format
-msgid "Accelerated"
-msgstr "Acelerado"
-
-#. module: account_report_adjustment
-#: model:ir.model,name:account_report_adjustment.model_account_analytic_report
-msgid "Account Analytic Report"
-msgstr "Informe Analítico de Cuenta"
-
-#. module: account_report_adjustment
-#: model:ir.model,name:account_report_adjustment.model_account_assets_report
-msgid "Account Assets Report"
-msgstr "Informe de cuenta de activo"
-
-#. module: account_report_adjustment
-#: model:ir.model,name:account_report_adjustment.model_account_difference_niif_colgap
-msgid "Account Difference NIIf-Colgap"
-msgstr "Difference NIIF - Colgap"
-
-#. module: account_report_adjustment
-#: model:ir.model,name:account_report_adjustment.model_account_financial_html_report
-msgid "Account Report (HTML)"
-msgstr "Informe de cuenta (HTML)"
-
-#. module: account_report_adjustment
 #: model:ir.model,name:account_report_adjustment.model_account_report
-msgid "Account trial balance report advance"
-msgstr "Balance de comprobación"
+msgid "Accounting Report"
+msgstr "Informe financiero"
 
 #. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_assets_report.py:0
 #, python-format
 msgid "Acquisition Date"
 msgstr "Fecha de adquisición"
 
 #. module: account_report_adjustment
-#: model:ir.model,name:account_report_adjustment.model_account_aged_payable
-msgid "Aged Payable"
-msgstr "Vencida por Pagar"
+#: model:ir.model,name:account_report_adjustment.model_account_asset_report_handler
+msgid "Asset Report Custom Handler"
+msgstr "Informe de Activos"
 
 #. module: account_report_adjustment
-#: model:ir.model,name:account_report_adjustment.model_account_aged_receivable
-msgid "Aged Receivable"
-msgstr "Vencida por Cobrar"
-
-#. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_assets_report.py:0
 #, python-format
 msgid "Assets"
 msgstr "Activo"
 
 #. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_assets_report.py:0
 #, python-format
 msgid "Book Value"
 msgstr "Valor en libros"
 
 #. module: account_report_adjustment
-#: model:ir.model,name:account_report_adjustment.model_account_cash_flow_report
-msgid "Cash Flow Report"
-msgstr "Informe de flujo de caja"
+#: model:ir.model,name:account_report_adjustment.model_account_cash_flow_report_handler
+msgid "Cash Flow Report Custom Handler"
+msgstr "Estado de flujo de efectivo"
 
 #. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_assets_report.py:0
 #, python-format
 msgid "Characteristics"
 msgstr "Características"
 
 #. module: account_report_adjustment
-#: model:ir.model,name:account_report_adjustment.model_account_coa_report
-msgid "Chart of Account Report"
-msgstr "Reporte de Plan de Cuentas"
-
-#. module: account_report_adjustment
-#: model:ir.model,name:account_report_adjustment.model_account_consolidated_journal
-msgid "Consolidated Journals Report"
-msgstr "Informe de diarios consolidados"
-
-#. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_assets_report.py:0
 #, python-format
 msgid "Degressive"
 msgstr "Regresivo"
 
 #. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_assets_report.py:0
 #, python-format
 msgid "Depreciation"
 msgstr "Depreciación"
 
 #. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_report.py:0
 #, python-format
-msgid "Document Number"
-msgstr "Número de Documento"
+msgid "Depreciation Table Report"
+msgstr "Informe de tabla de depreciación"
 
 #. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_assets_report.py:0
 #, python-format
 msgid "First Depreciation"
 msgstr "Primera depreciación"
 
 #. module: account_report_adjustment
-#: model:ir.model,name:account_report_adjustment.model_account_general_ledger
-msgid "General Ledger Report"
-msgstr "Informe del libro mayor"
+#: model:ir.model,name:account_report_adjustment.model_account_general_ledger_report_handler
+msgid "General Ledger Custom Handler"
+msgstr "Libro mayor"
 
 #. module: account_report_adjustment
-#: model:ir.model,name:account_report_adjustment.model_account_generic_tax_report
-msgid "Generic Tax Report"
-msgstr "Reporte Genérico de Impuestos"
+#: model:ir.model,name:account_report_adjustment.model_account_generic_tax_report_handler
+msgid "Generic Tax Report Custom Handler"
+msgstr "Informe impuestos"
 
 #. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_assets_report.py:0
 #, python-format
 msgid "Id"
 msgstr ""
 
 #. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_assets_report.py:0
 #, python-format
 msgid ""
@@ -146,30 +115,44 @@ msgstr ""
 " por año.<br>Para un método decreciente, es el factor decreciente"
 
 #. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_assets_report.py:0
 #, python-format
 msgid "Linear"
 msgstr "Lineal"
 
 #. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_assets_report.py:0
 #, python-format
 msgid "Method"
 msgstr "Método"
 
 #. module: account_report_adjustment
-#: model:ir.model,name:account_report_adjustment.model_account_partner_ledger
-msgid "Partner Ledger"
+#: model:ir.model,name:account_report_adjustment.model_account_partner_ledger_report_handler
+msgid "Partner Ledger Custom Handler"
 msgstr "Libro mayor de empresa"
 
 #. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_assets_report.py:0
 #, python-format
 msgid "Rate"
 msgstr "Tasa"
 
 #. module: account_report_adjustment
+#: model:ir.model.fields,field_description:account_report_adjustment.field_account_report__report_type
+msgid "Report Type"
+msgstr "Tipo reporte"
+
+#. module: account_report_adjustment
+#. odoo-python
 #: code:addons/account_report_adjustment/models/account_assets_report.py:0
 #, python-format
 msgid "Total"
 msgstr ""
+
+#. module: account_report_adjustment
+#: model:ir.model.fields,field_description:account_report_adjustment.field_account_report__zero_validation
+msgid "Zero Validation"
+msgstr "Validación cero"

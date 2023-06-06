@@ -6,6 +6,8 @@ from odoo.tests import common
 from odoo.tests.common import Form, SavepointCase
 from odoo.tools import DEFAULT_SERVER_DATE_FORMAT
 from odoo.tools.misc import formatLang
+from odoo.addons.account.tests.common import AccountTestInvoicingCommon
+
 import datetime
 import copy
 
@@ -95,7 +97,7 @@ def assertLinesValues(
         obj.fail('\n'.join(errors))
 
 
-class TestReportCommon(SavepointCase):
+class TestReportCommon(AccountTestInvoicingCommon):
 
     # -------------------------------------------------------------------------
     # DATA GENERATION

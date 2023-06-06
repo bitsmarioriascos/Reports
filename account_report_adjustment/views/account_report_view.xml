@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="account_report_inherit_adjustment" model="ir.ui.view">
+            <field name="name">account.report.inherit.levels</field>
+            <field name="model">account.report</field>
+            <field name="inherit_id" ref="account_reports.account_report_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='filter_period_comparison']" position="after">
+                    <field name="zero_validation" />
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

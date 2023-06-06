@@ -16,17 +16,18 @@
     # Categories can be used to filter modules in modules listing
     # for the full list
     'category': 'Uncategorized',
-    'version': '0.1',
+    'version': '16.0.1.0.0',
 
     # any module necessary for this one to work correctly
     'depends': [
         'web',
         'account_reports',
-        'l10n_co_reports',
-        "account_difference_report_niif_colgap",
-        "account_asset",
+        'account_asset'
     ],
 
     # always loaded
-    'data': []
+    'data': [
+        'views/account_report_view.xml',
+        'data/account.report.csv',
+    ]
 }
