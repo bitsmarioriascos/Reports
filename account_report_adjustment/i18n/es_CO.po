@@ -1,0 +1,175 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_report_adjustment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-03 21:50+0000\n"
+"PO-Revision-Date: 2023-02-03 21:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid "Accelerated"
+msgstr "Acelerado"
+
+#. module: account_report_adjustment
+#: model:ir.model,name:account_report_adjustment.model_account_analytic_report
+msgid "Account Analytic Report"
+msgstr "Informe Analítico de Cuenta"
+
+#. module: account_report_adjustment
+#: model:ir.model,name:account_report_adjustment.model_account_assets_report
+msgid "Account Assets Report"
+msgstr "Informe de cuenta de activo"
+
+#. module: account_report_adjustment
+#: model:ir.model,name:account_report_adjustment.model_account_difference_niif_colgap
+msgid "Account Difference NIIf-Colgap"
+msgstr "Difference NIIF - Colgap"
+
+#. module: account_report_adjustment
+#: model:ir.model,name:account_report_adjustment.model_account_financial_html_report
+msgid "Account Report (HTML)"
+msgstr "Informe de cuenta (HTML)"
+
+#. module: account_report_adjustment
+#: model:ir.model,name:account_report_adjustment.model_account_report
+msgid "Account trial balance report advance"
+msgstr "Balance de comprobación"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid "Acquisition Date"
+msgstr "Fecha de adquisición"
+
+#. module: account_report_adjustment
+#: model:ir.model,name:account_report_adjustment.model_account_aged_payable
+msgid "Aged Payable"
+msgstr "Vencida por Pagar"
+
+#. module: account_report_adjustment
+#: model:ir.model,name:account_report_adjustment.model_account_aged_receivable
+msgid "Aged Receivable"
+msgstr "Vencida por Cobrar"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid "Assets"
+msgstr "Activo"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid "Book Value"
+msgstr "Valor en libros"
+
+#. module: account_report_adjustment
+#: model:ir.model,name:account_report_adjustment.model_account_cash_flow_report
+msgid "Cash Flow Report"
+msgstr "Informe de flujo de caja"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid "Characteristics"
+msgstr "Características"
+
+#. module: account_report_adjustment
+#: model:ir.model,name:account_report_adjustment.model_account_coa_report
+msgid "Chart of Account Report"
+msgstr "Reporte de Plan de Cuentas"
+
+#. module: account_report_adjustment
+#: model:ir.model,name:account_report_adjustment.model_account_consolidated_journal
+msgid "Consolidated Journals Report"
+msgstr "Informe de diarios consolidados"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid "Degressive"
+msgstr "Regresivo"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid "Depreciation"
+msgstr "Depreciación"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_report.py:0
+#, python-format
+msgid "Document Number"
+msgstr "Número de Documento"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid "First Depreciation"
+msgstr "Primera depreciación"
+
+#. module: account_report_adjustment
+#: model:ir.model,name:account_report_adjustment.model_account_general_ledger
+msgid "General Ledger Report"
+msgstr "Informe del libro mayor"
+
+#. module: account_report_adjustment
+#: model:ir.model,name:account_report_adjustment.model_account_generic_tax_report
+msgid "Generic Tax Report"
+msgstr "Reporte Genérico de Impuestos"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid "Id"
+msgstr ""
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid ""
+"In percent.<br>For a linear method, the depreciation rate is computed per "
+"year.<br>For a degressive method, it is the degressive factor"
+msgstr ""
+"En porcentaje.<br>.Para un método lineal, la tasa de depreciación se calcula"
+" por año.<br>Para un método decreciente, es el factor decreciente"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid "Linear"
+msgstr "Lineal"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid "Method"
+msgstr "Método"
+
+#. module: account_report_adjustment
+#: model:ir.model,name:account_report_adjustment.model_account_partner_ledger
+msgid "Partner Ledger"
+msgstr "Libro mayor de empresa"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid "Rate"
+msgstr "Tasa"
+
+#. module: account_report_adjustment
+#: code:addons/account_report_adjustment/models/account_assets_report.py:0
+#, python-format
+msgid "Total"
+msgstr ""
