@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="account_report_inherit_range_account">
+            <field name="name">account.report.inherit.range.account</field>
+            <field name="model">account.report</field>
+            <field name="inherit_id" ref="account_reports.account_report_form"/>
+            <field name="arch" type="xml">
+            <xpath expr="//field[@name='filter_account_type']" position="after">
+                <field name="filter_range_account" />
+            </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,83 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_report_difference_niif_colgap
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-01 16:21+0000\n"
+"PO-Revision-Date: 2023-06-01 16:21+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_report_difference_niif_colgap
+#: model_terms:ir.ui.view,arch_db:account_report_difference_niif_colgap.search_template_account_accounts
+msgid "<span class=\"fa fa-folder-open\"/> Range Accounts"
+msgstr "<span class=\"fa fa-folder-open\"/> Rango Cuentas"
+
+#. module: account_report_difference_niif_colgap
+#: model:ir.model,name:account_report_difference_niif_colgap.model_account_difference_niif_colgap_report_handler
+msgid "Account Difference NIIF - Colgaap"
+msgstr "Cuenta Diferencia NIIF - Colgaap"
+
+#. module: account_report_difference_niif_colgap
+#: model:ir.model,name:account_report_difference_niif_colgap.model_account_report
+msgid "Accounting Report"
+msgstr "Informe financiero"
+
+#. module: account_report_difference_niif_colgap
+#. odoo-javascript
+#: code:addons/account_report_difference_niif_colgap/static/src/js/account_report_accounts.js:0
+#, python-format
+msgid "Accounts From"
+msgstr "Cuenta de Inicio"
+
+#. module: account_report_difference_niif_colgap
+#. odoo-javascript
+#: code:addons/account_report_difference_niif_colgap/static/src/js/account_report_accounts.js:0
+#, python-format
+msgid "Accounts To"
+msgstr "Cuenta Hasta"
+
+#. module: account_report_difference_niif_colgap
+#: model:account.report.column,name:account_report_difference_niif_colgap.difference_niif_colgab_report_difference
+msgid "Difference"
+msgstr "Diferencia"
+
+#. module: account_report_difference_niif_colgap
+#: model:account.report,name:account_report_difference_niif_colgap.difference_niif_colgab
+msgid "Difference NIIF - Colgaap"
+msgstr "Diferencia NIIF - Colgaap"
+
+#. module: account_report_difference_niif_colgap
+#: model:ir.actions.client,name:account_report_difference_niif_colgap.action_account_report_difference_niif_colgap
+#: model:ir.ui.menu,name:account_report_difference_niif_colgap.menu_action_account_report_difference_niif_colgap
+msgid "Diffrence NIIF - Colgaap"
+msgstr "Diferencia NIIF - Colgaap"
+
+#. module: account_report_difference_niif_colgap
+#: model:account.report.column,name:account_report_difference_niif_colgap.difference_niif_colgab_report_fiscal_balance
+msgid "Fiscal Balance"
+msgstr "Balance Fiscal"
+
+#. module: account_report_difference_niif_colgap
+#: model:account.report.column,name:account_report_difference_niif_colgap.difference_niif_colgab_report_niif_balance
+msgid "NIIF Balance"
+msgstr "Balance NIIF"
+
+#. module: account_report_difference_niif_colgap
+#: model:ir.model.fields,field_description:account_report_difference_niif_colgap.field_account_report__filter_range_account
+msgid "Range Account"
+msgstr "Rango Cuentas"
+
+#. module: account_report_difference_niif_colgap
+#. odoo-python
+#: code:addons/account_report_difference_niif_colgap/models/account_difference_niif_colgap.py:0
+#, python-format
+msgid "Total"
+msgstr "Total"

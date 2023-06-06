@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="difference_niif_colgab" model="account.report">
+        <field name="name">Difference NIIF - Colgaap</field>
+        <field name="filter_show_draft" eval="True" />
+        <field name="filter_account_type">payable_receivable</field>
+        <field name="filter_partner" eval="False" />
+        <field name="filter_unfold_all" eval="False" />
+        <field name="filter_unreconciled" eval="False" />
+        <field name="filter_period_comparison" eval="False" />
+        <field name="filter_multi_company">selector</field>
+        <field name="search_bar" eval="True" />
+        <field name="custom_handler_model_id" ref="model_account_difference_niif_colgap_report_handler" />
+        <!-- <field name="main_template">account_reports.template_partner_ledger_report</field> -->
+        <!-- <field name="line_template">account_reports.line_template_partner_ledger_report</field> -->
+        <field name="load_more_limit" eval="80" />
+        <field name="column_ids">
+            <record id="difference_niif_colgab_report_fiscal_balance" model="account.report.column">
+                <field name="name">Fiscal Balance</field>
+                <field name="expression_label">fiscal balance</field>
+                <field name="figure_type">monetary</field>
+                <field name="blank_if_zero" eval="False" />
+            </record>
+            <record id="difference_niif_colgab_report_niif_balance" model="account.report.column">
+                <field name="name">NIIF Balance</field>
+                <field name="expression_label">niif balance</field>
+                <field name="figure_type">monetary</field>
+                <field name="blank_if_zero" eval="False" />
+            </record>
+            <record id="difference_niif_colgab_report_difference" model="account.report.column">
+                <field name="name">Difference</field>
+                <field name="expression_label">difference</field>
+                <field name="figure_type">monetary</field>
+                <field name="blank_if_zero" eval="False" />
+            </record>
+        </field>
+    </record>
+</odoo>
