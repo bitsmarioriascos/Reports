@@ -72,6 +72,17 @@ msgstr "Regresivo"
 msgid "Depreciation"
 msgstr "Depreciación"
 
+#. module: account_asset
+#. odoo-python
+#: code:addons/account_asset/report/account_assets_report.py:0
+#: model:ir.model.fields,field_description:account_asset.field_account_bank_statement_line__depreciation_value
+#: model:ir.model.fields,field_description:account_asset.field_account_move__depreciation_value
+#: model:ir.model.fields,field_description:account_asset.field_account_payment__depreciation_value
+#: model_terms:ir.ui.view,arch_db:account_asset.view_account_asset_form
+#, python-format
+msgid "Depreciation"
+msgstr "Depreciación"
+
 #. module: account_report_adjustment
 #. odoo-python
 #: code:addons/account_report_adjustment/models/account_report.py:0

@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
 
-    <record id="account_asset_report_form" model="account.report">
-        <field name="field_name">field_value</field>
+    <record id="account_asset.assets_report" model="account.report">
+        <field name="name">Depreciation Schedule</field>
+        <field name="filter_hierarchy">optional</field>
+        <field name="filter_unfold_all" eval="True"/>
+        <field name="filter_period_comparison" eval="False"/>
+        <field name="custom_handler_model_id" ref="model_account_asset_report_handler"/>
+        <field name="search_template">account_asset.assets_search_template</field>
+        <field name="main_template">account_asset.main_template_assets</field>
+        <field name="main_table_header_template">account_asset.main_table_header_assets</field>
+        <field name="load_more_limit" eval="80"/>
+        <field name="column_ids">
+            <record id="assets_report_id" model="account.report.column">
+                <field name="name">ID</field>
+                <field name="expression_label">id</field>
+                <field name="figure_type">none</field>
+                <field name="sequence" eval="1" />
+            </record>
+      </field>
     </record>
 
 </odoo>

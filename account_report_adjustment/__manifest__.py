@@ -29,5 +29,6 @@
     'data': [
         'views/account_report_view.xml',
         'data/account.report.csv',
+        'data/account_assets_report.xml'
     ]
 }
